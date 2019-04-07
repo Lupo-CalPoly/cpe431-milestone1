@@ -1,0 +1,23 @@
+digraph "addwithprintlib.c.234r.expand" {
+overlap=false;
+subgraph "cluster_main" {
+	label="main ()";
+	basic_block_0 [shape=Mdiamond,label="ENTRY"];
+
+	basic_block_2 [shape=record,label="
+{
+3:\ NOTE_INSN_BASIC_BLOCK\ 2\l\
+|2:\ NOTE_INSN_FUNCTION_BEG\l\
+|5:\ def r0 use 0xd2\l\
+|6:\ def r0 call\ [`cpe431_print']\ argc:0\l\
+|7:\ def r110 use 0xd2\l\
+|11:\ def r0 use r110\l\
+|12:\ use r0\l\
+}"];
+
+	basic_block_1 [shape=Mdiamond,label="EXIT"];
+	
+    basic_block_0:s -> basic_block_2:n [constraint=true];
+	basic_block_2:s -> basic_block_1:n [constraint=true];
+}
+}

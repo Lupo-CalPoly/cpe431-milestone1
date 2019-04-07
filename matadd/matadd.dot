@@ -1,0 +1,101 @@
+digraph "matadd" {
+overlap=false;
+subgraph "cluster_matadd" {
+	style="dashed";
+	color="black";
+	label="matadd ()";
+	basic_block_0 [shape=Mdiamond,label="ENTRY"];
+
+	basic_block_2 [shape=record,label="
+{
+10:\ NOTE_INSN_BASIC_BLOCK\ 2\l\
+|2:\ def r128 use r0\l\
+|3:\ def r129 use r1\l\
+|4:\ def r130 use r2\l\
+|5:\ def r131 use r3\l\
+|6:\ def r132 use mem[r104]\l\
+|7:\ NOTE_INSN_FUNCTION_BEG\l\
+|12:\ def cc use r131 use 0\l\
+|13:\ def pc use cc\l\
+}"];
+
+	basic_block_4 [shape=record,label="
+{
+14:\ NOTE_INSN_BASIC_BLOCK\ 4\l\
+|15:\ def r120 use r129\l\
+|16:\ def r119 use r130\l\
+|17:\ def r123 use r128\l\
+|8:\ def r122 use 0\l\
+}"];
+
+	basic_block_5 [shape=record,label="
+{
+40:\ L40:\l\
+|18:\ NOTE_INSN_BASIC_BLOCK\ 5\l\
+|19:\ def cc use r132 use 0)\l\
+|20:\ def pc use cc\l\
+}"];
+
+	basic_block_6 [shape=record,label="
+{
+47:\ NOTE_INSN_BASIC_BLOCK\ 6\l\
+|9:\ def r121 use 0\l\
+}"];
+
+	basic_block_7 [shape=record,label="
+{
+31:\ L31:\l\
+|21:\ NOTE_INSN_BASIC_BLOCK\ 7\l\
+|22:\ def r124 use r121\l\
+|23:\ def r133 use mem[r123]\l\
+|24:\ def r134 use mem[r120]\l\
+|25:\ def r135 use mem[r119]\l\
+|26:\ def r137 use mem[r134 r124]\l\
+|27:\ def r138 use mem[r135 r124]\l\
+|28:\ def r136 use r137 use r138\l\
+|29:\ def mem[r133 r124] use r136\l\
+|30:\ def r121 use r121 use 0x1\l\
+|32:\ def cc use r132 use r121\l\
+|33:\ def pc use cc\l\
+}"];
+
+	basic_block_8 [shape=record,label="
+{
+34:\ L34:\l\
+|35:\ NOTE_INSN_BASIC_BLOCK\ 8\l\
+|36:\ def r122 use r122 use 0x1\l\
+|37:\ def r120 use r120 use 0x4\l\
+|38:\ def r119 use r119 use 0x4\l\
+|39:\ def r123 use r123 use 0x4\l\
+|41:\ def cc use r131 use r122\l\
+|42:\ def pc use cc\l\
+}"];
+
+	basic_block_9 [shape=record,label="
+{
+44:\ NOTE_INSN_BASIC_BLOCK\ 9\l\
+}"];
+
+	basic_block_10 [shape=record,label="
+{
+45:\ L45:\l\
+|46:\ NOTE_INSN_BASIC_BLOCK\ 10\l\
+}"];
+
+	basic_block_1 [shape=Mdiamond,label="EXIT"];
+
+	basic_block_0:s -> basic_block_2:n [constraint=true];
+	basic_block_2:s -> basic_block_10:n [constraint=true];
+	basic_block_2:s -> basic_block_4:n [constraint=true];
+	basic_block_4:s -> basic_block_5:n [constraint=true];
+	basic_block_5:s -> basic_block_8:n [constraint=true];
+	basic_block_5:s -> basic_block_6:n [constraint=true];
+	basic_block_6:s -> basic_block_7:n [constraint=true];
+	basic_block_7:s -> basic_block_8:n [constraint=true];
+	basic_block_7:s -> basic_block_7:n [constraint=false];
+	basic_block_8:s -> basic_block_9:n [constraint=true];
+	basic_block_8:s -> basic_block_5:n [constraint=false];
+	basic_block_9:s -> basic_block_10:n [constraint=true];
+	basic_block_10:s -> basic_block_1:n [constraint=true];
+}
+}
